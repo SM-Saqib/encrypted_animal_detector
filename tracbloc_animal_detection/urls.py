@@ -13,19 +13,28 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from unicodedata import name
 from django.contrib import admin
+
 # from django.urls import include, path
-from django.conf.urls import include,url
+from django.urls import include, path, re_path
 
 
 # urlpatterns = [
-    
+
 #     path('animal_detector_app/', include('animal_detector_app.urls')),
 #     path('admin/',admin.site.urls),
 # ]
 
+from django.apps import apps
+import animal_detector_app.urls
+
 urlpatterns = [
-    url(r'^admin/' , admin.site.urls),
-    url(r'^', include('animal_detector_app.urls',namespace='animal_detector_app'))
+    path(r"^admin/", admin.site.urls),
+]
+
+app_name = apps.get_app_config("animal_detector_app").name
+urlpatterns += [
+    path("", include((animal_detector_app.urls, app_name), namespace=app_name)),
 ]

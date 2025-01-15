@@ -1,9 +1,6 @@
 from tensorflow.keras.applications.efficientnet import EfficientNetB7
-from tensorflow.keras.layers import Flatten, Dense #, Dropout
-from tensorflow.keras.models import Sequential, load_model
-# from tensorflow.keras.preprocessing.image import ImageDataGenerator
-# from tensorflow.keras.callbacks import ModelCheckpoint, ReduceLROnPlateau
-from tensorflow.keras.optimizers import Adam, SGD
+from tensorflow.keras.layers import Flatten, Dense
+from tensorflow.keras.models import Sequential
 
 
 
@@ -50,9 +47,3 @@ class Animal_detector():
         self.model.add(vgg16)
         self.model.add(Flatten())
         self.model.add(Dense(self.class_no, activation = "softmax"))
-        
-        # otimizador = SGD(learning_rate = 3e-3, momentum = 0.6)
-
-        # self.model.compile(loss="categorical_crossentropy",
-        #             optimizer = otimizador,
-        #             metrics = ["accuracy"])

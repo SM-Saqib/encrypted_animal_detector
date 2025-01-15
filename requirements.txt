@@ -1,0 +1,8 @@
+Django
+channels
+asgi-redis
+redis
+tensorflow
+opencv-python
+scikit-learn
+Pillow
