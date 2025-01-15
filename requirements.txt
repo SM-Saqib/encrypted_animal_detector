@@ -1,8 +1,8 @@
-Django
-channels
-asgi-redis
-redis
-tensorflow
-opencv-python
-scikit-learn
-Pillow
+Django==5.1.5
+channels==4.2.0
+asgi-redis==1.1.0
+redis==5.2.1
+tensorflow==2.18.0
+opencv-python==4.10.0.84
+scikit-learn==1.6.1
+Pillow==11.1.0
